@@ -1,2 +1,2 @@
 # PyProGen
-Tool to generate different kinds of Python projects
+Tool to generate different kinds of Python projects from the command line
