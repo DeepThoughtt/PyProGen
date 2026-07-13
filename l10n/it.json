@@ -1,5 +1,4 @@
 {
-	"helloWorld": "Ciao mondo!",
 	"pyprogenDescription": "PyProGen: uno strumento per generare un setup per vari tipi di progetti Python.",
 	"workingDirectory": "Directory di lavoro",
 	"projectType": "Tipo di progetto",
@@ -13,5 +12,6 @@
 	"notADirectoryError": "Errore: '{dir}' non è una directory",
 	"directoryDoesNotExistsError": "Errore: la directory '{dir}' non esiste",
 	"invalidProjectTypeError": "Errore: tipo di progetto non valido",
-	"usage": "Uso: ppg [-h] [--type {projects} | --version] [--name NAME] [--verbose] [dir]"
+	"usage": "Uso: {formatted}",
+	"unrecognizedArgumentsError": "Errore: parametri non riconosciuti ({cmd})"
 }

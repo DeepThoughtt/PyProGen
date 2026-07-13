@@ -1,19 +1,24 @@
 import argparse
 import sys
 
-from src.consts.project_types import ProjectTypes
 from src.singletons.localization import localization
 
 class CustomParser(argparse.ArgumentParser):
 
+    def __init__(self, prog, description):
+        super().__init__(prog = prog, description = description)
+
     def error(self, message):
-        if "unrecognized arguments: --type" in message:
-            valid_projects = ", ".join(ProjectTypes.to_list())
-            invalid_project_msg = localization["invalidProjectTypeError"]
-            usage_msg = localization["usage"].format(projects = "{" + valid_projects + "}")
-            print(f"{usage_msg}\n{invalid_project_msg}")
+        if "unrecognized arguments" in message:
+            cmd_msg = message.split(":")[1].strip()
+            unrecognized_arguments_msg = localization["unrecognizedArgumentsError"].format(cmd = cmd_msg)
+            print(f"{self.get_usage()}{unrecognized_arguments_msg}")
         
         else:
             print(message)
 
         sys.exit(2)
+
+    def get_usage(self):
+        usage_format = self.format_usage().replace("usage: ", "")
+        return localization["usage"].format(formatted = usage_format)

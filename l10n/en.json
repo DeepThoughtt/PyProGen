@@ -1,5 +1,4 @@
 {
-    "helloWorld": "Hello world!",
     "pyprogenDescription": "PyProGen: a tool to generate a setup for different kinds of Python projects.",
     "workingDirectory": "Working directory",
     "projectType": "Project type",
@@ -13,5 +12,6 @@
     "notADirectoryError": "Error: '{dir}' is not a directory",
     "directoryDoesNotExistsError": "Error: the directory '{dir}' does not exist",
     "invalidProjectTypeError": "Error: invalid project type",
-    "usage": "Usage: ppg [-h] [--type {projects} | --version] [--name NAME] [--verbose] [dir]"
+    "usage": "Usage: {formatted}",
+    "unrecognizedArgumentsError": "Error: unrecognized arguments ({cmd})"
 }

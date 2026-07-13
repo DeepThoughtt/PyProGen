@@ -3,6 +3,8 @@ from src.consts.project_types import ProjectTypes
 from src.parser.custom_parser import CustomParser
 from src.singletons.localization import localization
 
+import sys
+
 def main():
     parser = CustomParser(
         prog = "ppg",
@@ -10,8 +12,7 @@ def main():
     )
     
     parser.add_argument(
-        "dir",
-        nargs = "?",
+        "--dir",
         help = localization["workingDirectory"],
     )
 
@@ -41,7 +42,6 @@ def main():
     )
 
     AppBusiness.handle_arguments(parser.parse_args())
-    print(localization["helloWorld"])
 
 if __name__ == "__main__":
     try:
