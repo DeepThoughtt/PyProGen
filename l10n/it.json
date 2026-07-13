@@ -7,5 +7,11 @@
 	"generateFromJson": "Genera il progetto usando un file JSON",
 	"generateJson": "Genera un file JSON template da modificare",
 	"showVersion": "Mostra la versione di PyProGen",
-	"enableVerboseOutput": "Attiva l'output verboso durante la generazione del progetto"
+	"enableVerboseOutput": "Attiva l'output verboso durante la generazione del progetto",
+	"tooManyArgumentsError": "Errore: troppi parametri",
+	"unspecifiedProjectdirectoryError": "Errore: directory del progetto non specificata",
+	"notADirectoryError": "Errore: '{dir}' non è una directory",
+	"directoryDoesNotExistsError": "Errore: la directory '{dir}' non esiste",
+	"invalidProjectTypeError": "Errore: tipo di progetto non valido",
+	"usage": "Uso: ppg [-h] [--type {projects} | --version] [--name NAME] [--verbose] [dir]"
 }

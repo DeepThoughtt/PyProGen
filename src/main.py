@@ -1,11 +1,10 @@
-import argparse
-
 from src.business.app_business import AppBusiness
 from src.consts.project_types import ProjectTypes
+from src.parser.custom_parser import CustomParser
 from src.singletons.localization import localization
 
 def main():
-    parser = argparse.ArgumentParser(
+    parser = CustomParser(
         prog = "ppg",
         description = localization["pyprogenDescription"],
     )
@@ -22,18 +21,6 @@ def main():
         "--type",
         choices = ProjectTypes.to_list(),
         help = localization["projectType"],
-    )
-
-    group.add_argument(
-        "--json",
-        metavar = "JSON_FILE.json",
-        help = localization["generateFromJson"],
-    )
-
-    group.add_argument(
-        "--gen-sample-json",
-        action = "store_true",
-        help = localization["generateJson"],
     )
 
     group.add_argument(

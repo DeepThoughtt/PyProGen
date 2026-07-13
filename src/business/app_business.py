@@ -1,29 +1,43 @@
+import pathlib
+
+from src.singletons.localization import localization
 from src.singletons.settings import settings
 
 class AppBusiness:
 
     @staticmethod
     def handle_arguments(args):
-        AppBusiness.check_arguments(args)
+        error_msg = AppBusiness.check_arguments(args)
+
+        if error_msg != None:
+            raise ValueError(error_msg)
 
         if args.version:
             AppBusiness.show_app_version()
             return
-
-        if args.type != None:
-            AppBusiness.generate_project(args.type, args.name, args.verbose)
-            return
-
-        if args.json != None:
-            AppBusiness.generate_project_from_json(args.json, args.verbose)
-            return
         
-        AppBusiness.generate_sample_json_file()
+        AppBusiness.generate_project(args.type, args.name, args.verbose)
 
     @staticmethod
     def check_arguments(args):
-        # Should raise an exception if something is wrong
-        pass
+        if args.version and args.type != None:
+            return localization["tooManyArguments"]
+        
+        # No need to check further, we print the program version
+        if args.version:
+            return
+        
+        # Now we handle just the generation parameters
+        if args.dir == None:
+            return localization["unspecifiedProjectdirectoryError"]
+
+        project_directory = pathlib.Path(args.dir)
+
+        if not project_directory.exists():
+            return localization["directoryDoesNotExistsError"].format(dir = args.dir)
+
+        if not project_directory.is_dir():
+            return localization["notADirectoryError"].format(dir = args.dir)
     
     @staticmethod
     def show_app_version():
@@ -33,12 +47,4 @@ class AppBusiness:
 
     @staticmethod
     def generate_project(project_type, project_name, verbose_mode_enabled):
-        pass
-    
-    @staticmethod
-    def generate_project_from_json(json_file, verbose_mode_enabled):
-        pass
-
-    @staticmethod
-    def generate_sample_json_file():
         pass
