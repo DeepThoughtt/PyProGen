@@ -26,7 +26,7 @@ def main():
 
     group.add_argument(
         "--json",
-        metavar = "[JSON_FILE.json]",
+        metavar = "JSON_FILE.json",
         help = localization["generateFromJson"],
     )
 
@@ -40,6 +40,11 @@ def main():
         "--version",
         action = "store_true",
         help = localization["showVersion"],
+    )
+
+    parser.add_argument(
+        "--name",
+        help = localization["projectName"],
     )
 
     parser.add_argument(

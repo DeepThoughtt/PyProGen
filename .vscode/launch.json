@@ -8,7 +8,7 @@
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"args": ["."]
+			"args": ["--version"]
 		}
 	]
 }
