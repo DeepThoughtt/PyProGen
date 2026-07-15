@@ -16,6 +16,12 @@ class ProjectGenerator:
         # If the work directory doesn't exist it will be created when trying to write a file
         if not use_workdir:
             self.work_directory = self.work_directory / app_name
+
+    def print_info_if_verbose(self, info):
+        if not self.verbose:
+            return
+        
+        print(info)
     
     def generate_repository(self):
         # https://www.reddit.com/r/Python/comments/1kch7hf/template_strings_in_python_314_an_useful_new/
