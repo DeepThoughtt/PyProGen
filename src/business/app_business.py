@@ -21,13 +21,16 @@ class AppBusiness:
     @staticmethod
     def check_arguments(args):
         if args.version and args.type != None:
-            return localization["tooManyArguments"]
+            return localization["tooManyArgumentsError"]
         
-        # No need to check further, we print the program version
         if args.version:
+            if args.dir != None or args.type != None or args.name != None or args.verbose:
+                return localization["tooManyArgumentsError"]
+            
+            # No need to check further, we print the program version
             return
         
-        # Now we handle just the generation parameters
+        # Now we can handle the generation parameters alone
         if args.dir == None:
             return localization["unspecifiedProjectdirectoryError"]
 

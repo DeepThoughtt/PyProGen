@@ -3,8 +3,6 @@ from src.consts.project_types import ProjectTypes
 from src.parser.custom_parser import CustomParser
 from src.singletons.localization import localization
 
-import sys
-
 def main():
     parser = CustomParser(
         prog = "ppg",
