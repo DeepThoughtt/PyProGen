@@ -1,6 +1,9 @@
 import pathlib
 
 from src.consts.project_types import ProjectTypes
+from src.generators.cli_generator import CliGenerator
+from src.generators.pygame_generator import PygameGenerator
+from src.generators.tkinter_generator import TkinterGenerator
 from src.singletons.localization import localization
 from src.singletons.settings import settings
 
@@ -17,7 +20,7 @@ class AppBusiness:
             AppBusiness.show_app_version()
             return
         
-        AppBusiness.generate_project(args.type, args.name, args.publisher, args.verbose)
+        AppBusiness.generate_project(args)
 
     @staticmethod
     def check_arguments(args):
@@ -25,7 +28,7 @@ class AppBusiness:
             return localization["tooManyArgumentsError"]
         
         if args.version:
-            if args.dir != None or args.type != None or args.name != None or args.verbose:
+            if args.dir != None or args.type != None or args.name != None or args.verbose or args.publisher != None:
                 return localization["tooManyArgumentsError"]
             
             # No need to check further, we print the program version
@@ -56,5 +59,18 @@ class AppBusiness:
         print(f"{app_name} v{version}")
 
     @staticmethod
-    def generate_project(project_type, project_name, publisher, verbose_mode_enabled):
-        pass
+    def generate_project(args):
+        generator = None
+
+        match args.type:
+            case ProjectTypes.CLI:
+                generator = CliGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+            case ProjectTypes.TKINTER:
+                generator = TkinterGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+            case ProjectTypes.PYGAME:
+                generator = PygameGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+            case _:
+                raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
+            
+        generator.generate()
+        print(localization["generationCompleted"])

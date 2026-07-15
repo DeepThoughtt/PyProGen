@@ -18,5 +18,7 @@
 	"showsHelpMessage": "Mostra il messaggio di aiuto ed esce dall'applicazione",
 	"usageHelpText": "Uso:",
 	"optionsHelpText": "Opzioni:",
-	"projectPublisher": "Publisher del progetto"
+	"projectPublisher": "Publisher del progetto",
+	"useWorkdirDescription": "Usa la directory di lavoro come directory del progetto invece di crearne una apposita",
+	"generationCompleted": "Generazione completata"
 }

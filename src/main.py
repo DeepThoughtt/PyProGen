@@ -39,6 +39,12 @@ def main():
     )
 
     parser.add_argument(
+        "--use-workdir",
+        action = "store_true",
+        help = localization["useWorkdirDescription"],
+    )
+
+    parser.add_argument(
         "--verbose",
         action = "store_true",
         help = localization["enableVerboseOutput"],

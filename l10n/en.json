@@ -18,5 +18,7 @@
     "showsHelpMessage": "Shows the help message and quits the application",
     "usageHelpText": "Usage:",
     "optionsHelpText": "Options:",
-    "projectPublisher": "Project publisher"
+    "projectPublisher": "Project publisher",
+    "useWorkdirDescription": "Does not create a directory for the project, uses the work directory instead",
+    "generationCompleted": "Generation completed"
 }
