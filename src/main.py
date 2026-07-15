@@ -18,7 +18,6 @@ def main():
 
     group.add_argument(
         "--type",
-        choices = ProjectTypes.to_list(),
         help = localization["projectType"],
     )
 

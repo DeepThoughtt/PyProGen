@@ -43,9 +43,8 @@ class AppBusiness:
         if not project_directory.is_dir():
             return localization["notADirectoryError"].format(dir = args.dir)
         
-        # This 
         if args.type == None or not ProjectTypes.is_valid(args.type):
-            return localization["invalidProjectTypeError"]
+            return localization["unspecifiedOrInvalidProjectTypeError"]
         
         if args.name == None:
             return localization["projectNameNotSpecified"]
