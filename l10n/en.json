@@ -14,5 +14,8 @@
     "unspecifiedOrInvalidProjectTypeError": "Error: unspecified or invalid project type",
     "usage": "Usage: {formatted}",
     "unrecognizedArgumentsError": "Error: unrecognized arguments ({cmd})",
-    "projectNameNotSpecifiedError": "Error: project name not specified"
+    "projectNameNotSpecifiedError": "Error: project name not specified",
+    "showsHelpMessage": "Shows the help message and quits the application",
+    "usageHelpText": "Usage:",
+    "optionsHelpText": "Options:"
 }

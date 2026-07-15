@@ -1,6 +1,5 @@
 from src.business.app_business import AppBusiness
-from src.consts.project_types import ProjectTypes
-from src.parser.custom_parser import CustomParser
+from src.utils.custom_parser import CustomParser
 from src.singletons.localization import localization
 
 def main():
