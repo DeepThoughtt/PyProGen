@@ -1,5 +1,6 @@
 import pathlib
 
+from src.consts.project_types import ProjectTypes
 from src.singletons.localization import localization
 from src.singletons.settings import settings
 
@@ -37,10 +38,17 @@ class AppBusiness:
         project_directory = pathlib.Path(args.dir)
 
         if not project_directory.exists():
-            return localization["directoryDoesNotExistsError"].format(dir = args.dir)
+            return localization["directoryDoesNotExistError"].format(dir = args.dir)
 
         if not project_directory.is_dir():
             return localization["notADirectoryError"].format(dir = args.dir)
+        
+        # This 
+        if args.type == None or not ProjectTypes.is_valid(args.type):
+            return localization["invalidProjectTypeError"]
+        
+        if args.name == None:
+            return localization["projectNameNotSpecified"]
     
     @staticmethod
     def show_app_version():

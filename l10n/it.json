@@ -10,8 +10,9 @@
 	"tooManyArgumentsError": "Errore: troppi parametri",
 	"unspecifiedProjectdirectoryError": "Errore: directory del progetto non specificata",
 	"notADirectoryError": "Errore: '{dir}' non è una directory",
-	"directoryDoesNotExistsError": "Errore: la directory '{dir}' non esiste",
+	"directoryDoesNotExistError": "Errore: la directory '{dir}' non esiste",
 	"invalidProjectTypeError": "Errore: tipo di progetto non valido",
 	"usage": "Uso: {formatted}",
-	"unrecognizedArgumentsError": "Errore: parametri non riconosciuti ({cmd})"
+	"unrecognizedArgumentsError": "Errore: parametri non riconosciuti ({cmd})",
+	"projectNameNotSpecifiedError": "Errore: nome del progetto non specificato"
 }
