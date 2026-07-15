@@ -31,6 +31,13 @@ def main():
         help = localization["projectName"],
     )
 
+    # We will make no checks on this parameter, if it isn't specified
+    # we will not specify the publisher in the .iss file
+    parser.add_argument(
+        "--publisher",
+        help = localization["publisher"],
+    )
+
     parser.add_argument(
         "--verbose",
         action = "store_true",

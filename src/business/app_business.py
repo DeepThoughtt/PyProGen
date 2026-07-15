@@ -17,7 +17,7 @@ class AppBusiness:
             AppBusiness.show_app_version()
             return
         
-        AppBusiness.generate_project(args.type, args.name, args.verbose)
+        AppBusiness.generate_project(args.type, args.name, args.publisher, args.verbose)
 
     @staticmethod
     def check_arguments(args):
@@ -56,5 +56,5 @@ class AppBusiness:
         print(f"{app_name} v{version}")
 
     @staticmethod
-    def generate_project(project_type, project_name, verbose_mode_enabled):
+    def generate_project(project_type, project_name, publisher, verbose_mode_enabled):
         pass

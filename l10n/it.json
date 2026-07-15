@@ -17,5 +17,6 @@
 	"projectNameNotSpecifiedError": "Errore: nome del progetto non specificato",
 	"showsHelpMessage": "Mostra il messaggio di aiuto ed esce dall'applicazione",
 	"usageHelpText": "Uso:",
-	"optionsHelpText": "Opzioni:"
+	"optionsHelpText": "Opzioni:",
+	"publisher": "Publisher"
 }

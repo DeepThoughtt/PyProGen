@@ -17,5 +17,6 @@
     "projectNameNotSpecifiedError": "Error: project name not specified",
     "showsHelpMessage": "Shows the help message and quits the application",
     "usageHelpText": "Usage:",
-    "optionsHelpText": "Options:"
+    "optionsHelpText": "Options:",
+    "publisher": "Publisher"
 }
