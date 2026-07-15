@@ -8,7 +8,7 @@
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"args": ["--dir", ".", "--type", "LOL", "--name", "PyProGen"]
+			"args": ["--dir", ".", "--type", "cli", "--name", "PyProGen"]
 		}
 	]
 }
