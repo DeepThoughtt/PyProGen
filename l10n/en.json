@@ -18,5 +18,5 @@
     "showsHelpMessage": "Shows the help message and quits the application",
     "usageHelpText": "Usage:",
     "optionsHelpText": "Options:",
-    "publisher": "Publisher"
+    "projectPublisher": "Project publisher"
 }

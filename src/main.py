@@ -32,10 +32,10 @@ def main():
     )
 
     # We will make no checks on this parameter, if it isn't specified
-    # we will not specify the publisher in the .iss file
+    # we will not specify the project publisher in the .iss file
     parser.add_argument(
         "--publisher",
-        help = localization["publisher"],
+        help = localization["projectPublisher"],
     )
 
     parser.add_argument(
