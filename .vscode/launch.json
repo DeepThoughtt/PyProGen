@@ -8,7 +8,7 @@
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"args": ["--dir", ".", "--type", "cli", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
+			"args": ["--dir", ".", "--type", "cli", "--name", "TestCliApp", "--publisher", "DeepThoughtt", "--verbose"]
 		},
 		{
 			"name": "Generate Tkinter App",
@@ -17,7 +17,7 @@
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"args": ["--dir", ".", "--type", "tkinter", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
+			"args": ["--dir", ".", "--type", "tkinter", "--name", "TestTkinterApp", "--publisher", "DeepThoughtt", "--verbose"]
 		},
 		{
 			"name": "Generate Pygame App",
@@ -26,7 +26,7 @@
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"args": ["--dir", ".", "--type", "tkinter", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
+			"args": ["--dir", ".", "--type", "pygame", "--name", "TestPygameApp", "--publisher", "DeepThoughtt", "--verbose"]
 		}
 	]
 }
