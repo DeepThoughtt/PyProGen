@@ -2,13 +2,31 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Program launcher",
+			"name": "Generate CLI App",
 			"type": "debugpy",
 			"request": "launch",
 			"module": "src.main",
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"args": ["--dir", ".", "--type", "cli", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
+		},
+		{
+			"name": "Generate Tkinter App",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "src.main",
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"args": ["--dir", ".", "--type", "tkinter", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
+		},
+		{
+			"name": "Generate Pygame App",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "src.main",
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"args": ["--dir", ".", "--type", "tkinter", "--name", "PyProGen", "--publisher", "DeepThoughtt", "--verbose"]
 		}
 	]
 }
