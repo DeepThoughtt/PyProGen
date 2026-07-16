@@ -1,5 +1,9 @@
 import pathlib
 
+from src.consts.languages import Languages
+from src.singletons.localization import localization
+from src.utils.files import Files
+
 class ProjectGenerator:
 
     def __init__(
@@ -12,6 +16,7 @@ class ProjectGenerator:
         
         self.verbose = verbose_mode_enabled
         self.work_directory = pathlib.Path(work_directory)
+        self.app_name = app_name
         
         # If the work directory doesn't exist it will be created when trying to write a file
         if not use_workdir:
@@ -26,6 +31,19 @@ class ProjectGenerator:
     def generate_repository(self):
         # https://www.reddit.com/r/Python/comments/1kch7hf/template_strings_in_python_314_an_useful_new/
         # Use template strings for this (import string and then string.Template)
+        return self
+    
+    def generate_settings_files(self):
+        self.print_info_if_verbose(localization["generatingSettingsFiles"])
+        settings_path = self.work_directory / "assets" / "configs"
+        settings_path.mkdir(parents = True, exist_ok = True)
+        settings = Files.read_default_settings()
+
+        settings["version"] = "0.1.0"
+        settings["appName"] = self.app_name
+        settings["language"] = Languages.ENGLISH
+        settings["createCrashReports"] = True
+        Files.write_json(settings, settings_path / "default_appsettings.json")
         return self
 
     def generate_asset_files(self):
@@ -50,7 +68,4 @@ class ProjectGenerator:
         return self
     
     def generate_app_business(self):
-        return self
-    
-    def generate_settings_files(self):
         return self

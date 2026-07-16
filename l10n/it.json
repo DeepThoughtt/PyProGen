@@ -20,5 +20,6 @@
 	"optionsHelpText": "Opzioni:",
 	"projectPublisher": "Publisher del progetto",
 	"useWorkdirDescription": "Usa la directory di lavoro come directory del progetto invece di crearne una apposita",
-	"generationCompleted": "Generazione completata"
+	"generationCompleted": "Generazione completata",
+	"generatingSettingsFiles": "Genero i file di configurazione..."
 }

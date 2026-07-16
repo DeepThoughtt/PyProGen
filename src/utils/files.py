@@ -105,3 +105,13 @@ class Files:
     @staticmethod
     def load_svg(svg_name):
         return Files.get_resource_path(f"assets/svg/{svg_name}")
+    
+    @staticmethod
+    def write_json(json_content, file_path):
+        with open(file_path, "w", encoding = "utf-8") as json_file:
+                json.dump(json_content, json_file, ensure_ascii = False, indent = 4)
+    
+    @staticmethod
+    def write_file(file_content, file_path):
+        with open(file_path, "w",encoding = "utf-8") as file:
+            file.write(file_content)
