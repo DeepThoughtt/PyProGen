@@ -26,25 +26,31 @@ class ProjectGenerator:
     def generate_repository(self):
         # https://www.reddit.com/r/Python/comments/1kch7hf/template_strings_in_python_314_an_useful_new/
         # Use template strings for this (import string and then string.Template)
-        pass
+        return self
 
     def generate_asset_files(self):
-        pass
+        return self
 
     def generate_localization_files(self):
-        pass
+        return self
 
     def generate_utils(self):
-        pass
+        return self
 
     def generate_readme(self):
-        pass
+        return self
 
     def generate_gitignore(self):
-        pass
+        return self
 
     def generate_spec_and_installer(self):
-        pass
+        return self
 
     def generate_vscode_setup(self):
-        pass
+        return self
+    
+    def generate_app_business(self):
+        return self
+    
+    def generate_settings_files(self):
+        return self

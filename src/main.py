@@ -5,7 +5,7 @@ from src.singletons.localization import localization
 def main():
     parser = CustomParser(
         prog = "ppg",
-        description = localization["pyprogenDescription"],
+        description = localization["pyProGenDescription"],
     )
     
     parser.add_argument(
@@ -32,7 +32,7 @@ def main():
     )
 
     # We will make no checks on this parameter, if it isn't specified
-    # we will not specify the project publisher in the .iss file
+    # we will not write the project publisher in the .iss file
     parser.add_argument(
         "--publisher",
         help = localization["projectPublisher"],

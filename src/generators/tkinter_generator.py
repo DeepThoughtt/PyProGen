@@ -18,7 +18,17 @@ class TkinterGenerator(ProjectGenerator):
         )
 
     def generate(self):
-        pass
+        self.generate_asset_files()\
+            .generate_localization_files()\
+            .generate_settings_files()\
+            .generate_spec_and_installer()\
+            .generate_vscode_setup()\
+            .generate_app_business()\
+            .generate_repository()\
+            .generate_main_file()\
+            .generate_utils()\
+            .generate_gitignore()\
+            .generate_readme()
 
     def generate_main_file(self):
-        pass
+        return self
