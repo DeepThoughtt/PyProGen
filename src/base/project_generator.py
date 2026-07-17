@@ -108,6 +108,7 @@ class ProjectGenerator:
         template = string.Template(utils_template.read_text(encoding = "utf-8"))
         formatted = template.substitute(app_name = self.app_name)
         self.path_manager.create_file_from_content(formatted, "files.py")
+        self.path_manager.copy_python_template("shared/utils/settings_checker.py", "settings_checker.py")
 
         return self
 
