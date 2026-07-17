@@ -1,4 +1,5 @@
 import pathlib
+import os
 
 from src.consts.languages import Languages
 from src.singletons.localization import localization
@@ -47,6 +48,18 @@ class ProjectGenerator:
         appsettings_file = settings_path / "default_appsettings.json"
         self.print_file_info_if_verbose(appsettings_file)
         Files.write_json(settings, appsettings_file)
+        settings_template_path = Files.load_template("shared/settings.py")
+
+        src_path = self.work_directory / "src"
+        self.create_python_directory(src_path)
+
+        singletons_path = src_path / "singletons"
+        self.create_python_directory(singletons_path)
+
+        settings_file = singletons_path / "settings.py"
+        self.print_file_info_if_verbose(settings_file)
+        Files.write_from_template(settings_template_path, settings_file)
+
         return self
 
     def generate_asset_files(self):
@@ -72,3 +85,14 @@ class ProjectGenerator:
     
     def generate_app_business(self):
         return self
+    
+    def create_python_directory(self, path):
+        directory_exists = os.path.isdir(str(path))
+        path.mkdir(parents = True, exist_ok = True)
+
+        # If the directory has just been created we have to add the __init__.py file
+        init_path = path / "__init__.py"
+
+        if not directory_exists:
+            self.print_file_info_if_verbose(init_path)
+            open(init_path, "a").close()
