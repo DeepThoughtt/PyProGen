@@ -1,9 +1,7 @@
 import pathlib
-import os
 import string
 
 from src.consts.languages import Languages
-from src.singletons.localization import localization
 from src.utils.files import Files
 from src.utils.path_manager import PathManager
 

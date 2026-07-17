@@ -1,6 +1,7 @@
+import os
+
 from src.singletons.localization import localization
 from src.utils.files import Files
-
 
 class PathManager:
 
@@ -18,10 +19,11 @@ class PathManager:
             return
         
         self.actual_directory = self.actual_directory / directory
+        just_created = not os.path.isdir(str(self.actual_directory))
         self.actual_directory.mkdir(parents = True, exist_ok = True)
 
-        if is_python_module:
-            self.actual_directory.mkdir(parents = True, exist_ok = True)
+        # If a Python module has just been created we have to add the __init__.py file to it
+        if is_python_module and just_created:
             init_path = self.actual_directory / "__init__.py"
             self.print_file_info_if_verbose(init_path)
             open(init_path, "a").close()
