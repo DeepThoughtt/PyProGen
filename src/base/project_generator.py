@@ -22,11 +22,12 @@ class ProjectGenerator:
         if not use_workdir:
             self.work_directory = self.work_directory / app_name
 
-    def print_if_verbose(self, info):
+    def print_file_info_if_verbose(self, info):
         if not self.verbose:
             return
         
-        print(info)
+        message = localization["generatingFile"].format(file = info)
+        print(message)
     
     def generate_repository(self):
         # https://www.reddit.com/r/Python/comments/1kch7hf/template_strings_in_python_314_an_useful_new/
@@ -44,7 +45,7 @@ class ProjectGenerator:
         settings["createCrashReports"] = True
 
         appsettings_file = settings_path / "default_appsettings.json"
-        self.print_if_verbose(localization["generatingFile"].format(file = appsettings_file))
+        self.print_file_info_if_verbose(appsettings_file)
         Files.write_json(settings, appsettings_file)
         return self
 
