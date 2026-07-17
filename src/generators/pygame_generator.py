@@ -23,7 +23,7 @@ class PygameGenerator(ProjectGenerator):
         self.generate_asset_files()\
             .generate_localization_files()\
             .generate_settings_files()\
-            .generate_spec_file()\
+            .generate_installer()\
             .generate_pygame_scene()\
             .generate_vscode_setup()\
             .generate_repository()\

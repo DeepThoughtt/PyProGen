@@ -23,7 +23,7 @@ class TkinterGenerator(ProjectGenerator):
         self.generate_asset_files()\
             .generate_localization_files()\
             .generate_settings_files()\
-            .generate_spec_file()\
+            .generate_installer()\
             .generate_vscode_setup()\
             .generate_app_business()\
             .generate_repository()\

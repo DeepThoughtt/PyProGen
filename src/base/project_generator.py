@@ -127,7 +127,7 @@ class ProjectGenerator:
         
         return self
 
-    def generate_spec_file(self):
+    def generate_installer(self):
         self.path_manager.reset()
         self.path_manager.cd(".windows")
 
