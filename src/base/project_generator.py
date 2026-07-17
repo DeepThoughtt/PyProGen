@@ -34,16 +34,10 @@ class ProjectGenerator:
         print(message)
     
     def generate_repository(self):
-        repository_template_path = Files.load_template("shared/repository.py")
         self.path_manager.reset()
-
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
-
-        repository_file = self.path_manager.actual_directory / "repository.py"
-        self.print_file_info_if_verbose(repository_file)
-        Files.write_from_template(repository_template_path, repository_file)
-
+        self.path_manager.copy_python_template("shared/repository.py", "repository.py")
         return self
     
     def generate_settings_files(self):
