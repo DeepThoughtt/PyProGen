@@ -57,6 +57,24 @@ class ProjectGenerator:
         return self
 
     def generate_localization_files(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("singletons", True)
+        self.path_manager.copy_python_template("shared/singletons/localization.py", "localization.py")
+
+        self.path_manager.cd("..")
+        self.path_manager.cd("consts", True)
+        self.path_manager.copy_python_template("shared/consts/languages.py", "languages.py")
+
+        self.path_manager.reset()
+        self.path_manager.cd("l10n")
+
+        for language in Languages.to_set():
+            self.path_manager.create_json(
+                content = {"helloWorld": "Hello world!"},
+                filename = f"{language[0:2]}.json",
+            )
+
         return self
 
     def generate_utils(self):
