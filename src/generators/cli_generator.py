@@ -28,6 +28,7 @@ class CliGenerator(ProjectGenerator):
             .generate_app_business()\
             .generate_main_file()\
             .generate_utils()\
+            .generate_spec_file()\
             .generate_gitignore()\
             .generate_readme()
 
