@@ -1,5 +1,6 @@
 import pathlib
 import os
+import string
 
 from src.consts.languages import Languages
 from src.singletons.localization import localization
@@ -26,18 +27,11 @@ class ProjectGenerator:
         self.verbose = verbose_mode_enabled
         self.app_name = app_name
     
-    def print_file_info_if_verbose(self, info):
-        if not self.verbose:
-            return
-        
-        message = localization["generatingFile"].format(file = info)
-        print(message)
-    
     def generate_repository(self):
         self.path_manager.reset()
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
-        self.path_manager.copy_python_template("shared/repository.py", "repository.py")
+        self.path_manager.copy_python_template("shared/singletons/repository.py", "repository.py")
         return self
     
     def generate_settings_files(self):
@@ -56,7 +50,7 @@ class ProjectGenerator:
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
 
-        self.path_manager.copy_python_template("shared/settings.py", "settings.py")
+        self.path_manager.copy_python_template("shared/singletons/settings.py", "settings.py")
         return self
 
     def generate_asset_files(self):
@@ -66,6 +60,15 @@ class ProjectGenerator:
         return self
 
     def generate_utils(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("utils", True)
+
+        utils_template = Files.load_template("shared/utils/files.py")
+        template = string.Template(utils_template.read_text(encoding = "utf-8"))
+        formatted = template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted, "files.py")
+
         return self
 
     def generate_readme(self):

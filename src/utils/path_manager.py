@@ -46,3 +46,8 @@ class PathManager:
         settings_file = self.actual_directory / new_filename
         self.print_file_info_if_verbose(settings_file)
         Files.write_from_template(template, settings_file)
+
+    def create_file_from_content(self, content, filename):
+        file_path = self.actual_directory / filename
+        self.print_file_info_if_verbose(file_path)
+        Files.write_file(content, file_path)
