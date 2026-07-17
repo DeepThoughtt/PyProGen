@@ -1,3 +1,4 @@
+import shutil
 import os
 
 from src.singletons.localization import localization
@@ -53,3 +54,8 @@ class PathManager:
         file_path = self.actual_directory / filename
         self.print_file_info_if_verbose(file_path)
         Files.write_file(content, file_path)
+
+    def copy_file(self, source, filename):
+        destination = self.actual_directory / filename
+        self.print_file_info_if_verbose(destination)
+        shutil.copyfile(source, destination)

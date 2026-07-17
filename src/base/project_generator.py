@@ -30,6 +30,7 @@ class ProjectGenerator:
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
         self.path_manager.copy_python_template("shared/singletons/repository.py", "repository.py")
+
         return self
     
     def generate_settings_files(self):
@@ -47,11 +48,28 @@ class ProjectGenerator:
         self.path_manager.reset()
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
-
         self.path_manager.copy_python_template("shared/singletons/settings.py", "settings.py")
+
         return self
 
     def generate_asset_files(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("singletons", True)
+        self.path_manager.copy_python_template("shared/singletons/assets.py", "assets.py")
+
+        self.path_manager.reset()
+        self.path_manager.cd("assets")
+        self.path_manager.cd("icons")
+
+        icon = Files.get_resource_path(f"assets/templates/shared/misc/icon.ico")
+        self.path_manager.copy_file(str(icon), "icon.ico")
+
+        self.path_manager.reset()
+        self.path_manager.cd("src")
+        self.path_manager.cd("consts")
+        self.path_manager.copy_python_template("shared/consts/icons.py", "icons.py")
+        
         return self
 
     def generate_localization_files(self):
@@ -88,15 +106,31 @@ class ProjectGenerator:
         return self
 
     def generate_readme(self):
+        self.path_manager.reset()
+        readme = Files.load_template("shared/misc/README.md")
+        template = string.Template(readme.read_text(encoding = "utf-8"))
+        formatted = template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted, "README.md")
+
         return self
 
     def generate_gitignore(self):
+        self.path_manager.reset()
+        gitignore = Files.get_resource_path(f"assets/templates/shared/misc/.gitignore")
+        self.path_manager.copy_file(gitignore, ".gitignore")
+        
         return self
 
     def generate_spec_and_installer(self):
         return self
 
     def generate_vscode_setup(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".vscode")
+
+        gitignore = Files.get_resource_path(f"assets/templates/shared/misc/launch.json")
+        self.path_manager.copy_file(gitignore, "launch.json")
+        
         return self
     
     def generate_app_business(self):
