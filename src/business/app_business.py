@@ -64,11 +64,11 @@ class AppBusiness:
 
         match args.type:
             case ProjectTypes.CLI:
-                generator = CliGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+                generator = CliGenerator(args.name, args.publisher, args.dir, args.use_workdir, args.verbose)
             case ProjectTypes.TKINTER:
-                generator = TkinterGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+                generator = TkinterGenerator(args.name, args.publisher, args.dir, args.use_workdir, args.verbose)
             case ProjectTypes.PYGAME:
-                generator = PygameGenerator(args.name, args.dir, args.use_workdir, args.verbose)
+                generator = PygameGenerator(args.name, args.publisher, args.dir, args.use_workdir, args.verbose)
             case _:
                 raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
             

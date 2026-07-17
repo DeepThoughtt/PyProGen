@@ -5,6 +5,7 @@ class PygameGenerator(ProjectGenerator):
     def __init__(
         self,
         app_name,
+        publisher,
         work_directory,
         use_workdir,
         verbose_mode_enabled,
@@ -12,6 +13,7 @@ class PygameGenerator(ProjectGenerator):
         
         super().__init__(
             app_name,
+            publisher,
             work_directory,
             use_workdir,
             verbose_mode_enabled,
@@ -21,7 +23,7 @@ class PygameGenerator(ProjectGenerator):
         self.generate_asset_files()\
             .generate_localization_files()\
             .generate_settings_files()\
-            .generate_spec_and_installer()\
+            .generate_spec_file()\
             .generate_pygame_scene()\
             .generate_vscode_setup()\
             .generate_repository()\

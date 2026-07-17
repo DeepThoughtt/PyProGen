@@ -10,6 +10,7 @@ class ProjectGenerator:
     def __init__(
         self,
         app_name,
+        publisher,
         work_directory,
         use_workdir,
         verbose_mode_enabled,
@@ -21,6 +22,11 @@ class ProjectGenerator:
             use_workdir = use_workdir,
             verbose = verbose_mode_enabled,
         )
+
+        if publisher != None and len(publisher) > 0:
+            self.publisher = publisher
+        else:
+            self.publisher = "DefaultPublisher"
 
         self.verbose = verbose_mode_enabled
         self.app_name = app_name
@@ -121,7 +127,15 @@ class ProjectGenerator:
         
         return self
 
-    def generate_spec_and_installer(self):
+    def generate_spec_file(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".windows")
+
+        installer = Files.load_template("shared/misc/installer.iss")
+        installer_template = string.Template(installer.read_text(encoding = "utf-8"))
+        formatted_installer = installer_template.substitute(app_name = self.app_name, publisher = self.publisher)
+        self.path_manager.create_file_from_content(formatted_installer, "installer.iss")
+
         return self
 
     def generate_vscode_setup(self):
@@ -134,4 +148,9 @@ class ProjectGenerator:
         return self
     
     def generate_app_business(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("business", True)
+        self.path_manager.copy_python_template("shared/business/app_business.py", "app_business.py")
+
         return self
