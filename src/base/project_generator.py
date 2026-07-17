@@ -22,7 +22,7 @@ class ProjectGenerator:
         if not use_workdir:
             self.work_directory = self.work_directory / app_name
 
-    def print_info_if_verbose(self, info):
+    def print_if_verbose(self, info):
         if not self.verbose:
             return
         
@@ -34,7 +34,6 @@ class ProjectGenerator:
         return self
     
     def generate_settings_files(self):
-        self.print_info_if_verbose(localization["generatingSettingsFiles"])
         settings_path = self.work_directory / "assets" / "configs"
         settings_path.mkdir(parents = True, exist_ok = True)
         settings = Files.read_default_settings()
@@ -43,7 +42,10 @@ class ProjectGenerator:
         settings["appName"] = self.app_name
         settings["language"] = Languages.ENGLISH
         settings["createCrashReports"] = True
-        Files.write_json(settings, settings_path / "default_appsettings.json")
+
+        appsettings_file = settings_path / "default_appsettings.json"
+        self.print_if_verbose(localization["generatingFile"].format(file = appsettings_file))
+        Files.write_json(settings, appsettings_file)
         return self
 
     def generate_asset_files(self):

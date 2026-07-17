@@ -21,5 +21,5 @@
     "projectPublisher": "Project publisher",
     "useWorkdirDescription": "Does not create a directory for the project, uses the work directory instead",
     "generationCompleted": "Generation completed",
-    "generatingSettingsFiles": "Generating settings files..."
+    "generatingFile": "Generating {file}"
 }
