@@ -23,12 +23,8 @@ class ProjectGenerator:
             verbose = verbose_mode_enabled,
         )
 
-        if publisher != None and len(publisher) > 0:
-            self.publisher = publisher
-        else:
-            self.publisher = "DefaultPublisher"
-
         self.verbose = verbose_mode_enabled
+        self.publisher = publisher
         self.app_name = app_name
     
     def generate_repository(self):
@@ -154,8 +150,8 @@ class ProjectGenerator:
         self.path_manager.reset()
         self.path_manager.cd(".vscode")
 
-        gitignore = Files.get_resource_path(f"assets/templates/shared/misc/launch.json")
-        self.path_manager.copy_file(gitignore, "launch.json")
+        launch = Files.get_resource_path(f"assets/templates/shared/misc/launch.json")
+        self.path_manager.copy_file(launch, "launch.json")
         
         return self
     

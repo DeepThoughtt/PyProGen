@@ -14,12 +14,13 @@
     "unspecifiedOrInvalidProjectTypeError": "Error: unspecified or invalid project type",
     "usage": "Usage: {formatted}",
     "unrecognizedArgumentsError": "Error: unrecognized arguments ({cmd})",
-    "projectNameNotSpecifiedError": "Error: project name not specified",
+    "unspecifiedProjectNameError": "Error: unspecified project name",
     "showsHelpMessage": "Shows the help message and quits the application",
     "usageHelpText": "Usage:",
     "optionsHelpText": "Options:",
     "projectPublisher": "Project publisher",
     "useWorkdirDescription": "Does not create a directory for the project, uses the work directory instead",
     "generationCompleted": "Generation completed",
-    "generatingFile": "Generating {file}"
+    "generatingFile": "Generating {file}",
+    "unspecifiedPublisherError": "Error: unspecified publisher"
 }

@@ -14,12 +14,13 @@
 	"unspecifiedOrInvalidProjectTypeError": "Errore: tipo di progetto non valido o non specificato",
 	"usage": "Uso: {formatted}",
 	"unrecognizedArgumentsError": "Errore: parametri non riconosciuti ({cmd})",
-	"projectNameNotSpecifiedError": "Errore: nome del progetto non specificato",
+	"unspecifiedProjectNameError": "Errore: nome del progetto non specificato",
 	"showsHelpMessage": "Mostra il messaggio di aiuto ed esce dall'applicazione",
 	"usageHelpText": "Uso:",
 	"optionsHelpText": "Opzioni:",
 	"projectPublisher": "Publisher del progetto",
 	"useWorkdirDescription": "Usa la directory di lavoro come directory del progetto invece di crearne una apposita",
 	"generationCompleted": "Generazione completata",
-	"generatingFile": "Genero {file}"
+	"generatingFile": "Genero {file}",
+	"unspecifiedPublisherError": "Errore: publisher non specificato"
 }

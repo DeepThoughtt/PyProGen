@@ -50,7 +50,10 @@ class AppBusiness:
             return localization["unspecifiedOrInvalidProjectTypeError"]
         
         if args.name == None:
-            return localization["projectNameNotSpecified"]
+            return localization["unspecifiedProjectNameError"]
+        
+        if args.publisher == None:
+            return localization["unspecifiedPublisherError"]
     
     @staticmethod
     def show_app_version():
