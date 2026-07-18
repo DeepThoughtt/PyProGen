@@ -44,7 +44,7 @@ Name: "{commondesktop}\$app_name"; Filename: "{app}\{#Exe}"; Tasks: desktopicon
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalOptions}"; Flags: unchecked
 
-; This is needed for deleting the data saved in AppData when uninstalling the software
+; This code is used to delete the data saved in AppData when uninstalling the software
 [Code]
 procedure CurUninstallStepChanged (CurUninstallStep: TUninstallStep);
 var
