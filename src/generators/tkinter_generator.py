@@ -28,10 +28,23 @@ class TkinterGenerator(ProjectGenerator):
             .generate_app_business()\
             .generate_repository()\
             .generate_main_file()\
+            .generate_main_window()\
             .generate_utils()\
             .generate_spec_file()\
             .generate_gitignore()\
             .generate_readme()
 
     def generate_main_file(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.copy_python_template("tkinter/main/main.py", "main.py")
+
+        return self
+    
+    def generate_main_window(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("gui", True)
+        self.path_manager.copy_python_template("tkinter/gui/main_window.py", "main_window.py")
+
         return self

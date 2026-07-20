@@ -45,7 +45,7 @@ class ProjectGenerator:
         settings["appName"] = self.app_name
         settings["language"] = Languages.ENGLISH
         settings["createCrashReports"] = True
-        self.path_manager.create_json(settings, "default_settings.json")
+        self.path_manager.create_json(settings, "default_appsettings.json")
         
         self.path_manager.reset()
         self.path_manager.cd("src", True)
