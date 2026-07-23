@@ -31,6 +31,7 @@ class CliGenerator(ProjectGenerator):
             .generate_app_business()\
             .generate_main_file()\
             .generate_utils()\
+            .generate_github_build_workflow()\
             .generate_spec_file()\
             .generate_gitignore()\
             .generate_readme()
@@ -50,5 +51,17 @@ class CliGenerator(ProjectGenerator):
         spec_template = string.Template(spec.read_text(encoding = "utf-8"))
         formatted_spec = spec_template.substitute(app_name = self.app_name)
         self.path_manager.create_file_from_content(formatted_spec, "main-windows.spec")
+
+        return self
+
+    def generate_github_build_workflow(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".github")
+        self.path_manager.cd("workflows")
+
+        build_workflow = Files.load_template("cli/misc/build.yaml")
+        build_workflow_template = string.Template(build_workflow.read_text(encoding = "utf-8"))
+        formatted_build_workflow = build_workflow_template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted_build_workflow, "build.yaml")
 
         return self

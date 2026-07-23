@@ -30,6 +30,7 @@ class TkinterGenerator(ProjectGenerator):
             .generate_main_file()\
             .generate_main_window()\
             .generate_utils()\
+            .generate_github_build_workflow()\
             .generate_spec_file()\
             .generate_gitignore()\
             .generate_readme()
