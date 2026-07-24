@@ -10,5 +10,5 @@ class MainWindow(tkinter.Tk):
         super().__init__()
         self.title(settings["appName"])
         self.iconbitmap(assets.icons[Icons.ICON])
-        self.minsize(700, 200)
+        self.minsize(700, 700)
         self.geometry("")

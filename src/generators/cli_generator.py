@@ -65,3 +65,26 @@ class CliGenerator(ProjectGenerator):
         self.path_manager.create_file_from_content(formatted_build_workflow, "build.yaml")
 
         return self
+
+    def generate_settings_files(self):
+        self.path_manager.reset()
+        self.path_manager.cd("assets")
+        self.path_manager.cd("configs")
+
+        settings = Files.read_default_settings()
+        settings["version"] = "0.1.0"
+        settings["appName"] = self.app_name
+
+        # We don't add the "language" setting and the "createCrashReports" setting
+        # because the language is detected from the locale and cannot be changed
+        # in a CLI application, while the crash reports are written in the
+        # console, not in a log file
+
+        self.path_manager.create_json(settings, "default_appsettings.json")
+        
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("singletons", True)
+        self.path_manager.copy_python_template("shared/singletons/settings.py", "settings.py")
+
+        return self
