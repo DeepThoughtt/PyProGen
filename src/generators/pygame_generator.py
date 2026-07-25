@@ -1,3 +1,5 @@
+import string
+
 from src.base.project_generator import ProjectGenerator
 from src.utils.files import Files
 
@@ -81,5 +83,18 @@ class PygameGenerator(ProjectGenerator):
 
         icon = Files.get_resource_path(f"assets/templates/pygame/misc/icon.png")
         self.path_manager.copy_file(str(icon), "icon.png")
+
+        return self
+
+    def generate_utils(self):
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("utils", True)
+
+        utils_template = Files.load_template("pygame/utils/files.py")
+        template = string.Template(utils_template.read_text(encoding = "utf-8"))
+        formatted = template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted, "files.py")
+        self.path_manager.copy_python_template("shared/utils/settings_checker.py", "settings_checker.py")
 
         return self

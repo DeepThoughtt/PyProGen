@@ -22,10 +22,14 @@ def main():
         Scenes.MAIN_MENU: MainMenuScene,
     }
 
-    display = pygame.display.set_mode((0, 0), pygame.NOFRAME)
+    # Fullscreen mode
+    # display = pygame.display.set_mode((0, 0), pygame.NOFRAME)
+
+    # Windowed mode
+    display = pygame.display.set_mode((800, 600))
+    
     SettingsChecker.fix_and_save(settings)
 
-    assets.font = settings["font"]
     localization.set_language(settings["language"])
     pygame.display.set_caption(settings["appName"])
 
