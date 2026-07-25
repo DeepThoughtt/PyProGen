@@ -77,7 +77,7 @@ class CliGenerator(ProjectGenerator):
 
         # We don't add the "language" setting and the "createCrashReports" setting
         # because the language is detected from the locale and cannot be changed
-        # in a CLI application, while the crash reports are written in the
+        # in a CLI application while the crash reports are written in the
         # console, not in a log file
 
         self.path_manager.create_json(settings, "default_appsettings.json")
