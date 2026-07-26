@@ -81,12 +81,12 @@ class PygameGenerator(ProjectGenerator):
         self.path_manager.cd("images")
 
         icon_image = Files.get_resource_path(f"assets/templates/pygame/misc/icon.png")
-        self.path_manager.copy_file(str(icon_image), "icon.png")
+        self.path_manager.copy_file(icon_image, "icon.png")
 
         self.path_manager.cd("..")
         self.path_manager.cd("icons")
         icon = Files.get_resource_path(f"assets/templates/shared/misc/icon.ico")
-        self.path_manager.copy_file(str(icon), "icon.ico")
+        self.path_manager.copy_file(icon, "icon.ico")
 
         self.path_manager.reset()
         self.path_manager.cd("src", True)
