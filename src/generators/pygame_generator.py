@@ -60,7 +60,6 @@ class PygameGenerator(ProjectGenerator):
         self.path_manager.cd("consts", True)
         self.path_manager.copy_python_template("pygame/consts/scenes.py", "scenes.py")
         self.path_manager.copy_python_template("pygame/consts/colors.py", "colors.py")
-        self.path_manager.copy_python_template("pygame/consts/images.py", "images.py")
         
         return self
 
@@ -81,8 +80,19 @@ class PygameGenerator(ProjectGenerator):
         self.path_manager.cd("assets")
         self.path_manager.cd("images")
 
-        icon = Files.get_resource_path(f"assets/templates/pygame/misc/icon.png")
-        self.path_manager.copy_file(str(icon), "icon.png")
+        icon_image = Files.get_resource_path(f"assets/templates/pygame/misc/icon.png")
+        self.path_manager.copy_file(str(icon_image), "icon.png")
+
+        self.path_manager.cd("..")
+        self.path_manager.cd("icons")
+        icon = Files.get_resource_path(f"assets/templates/shared/misc/icon.ico")
+        self.path_manager.copy_file(str(icon), "icon.ico")
+
+        self.path_manager.reset()
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("consts", True)
+        self.path_manager.copy_python_template("pygame/consts/images.py", "images.py")
+        self.path_manager.copy_python_template("shared/consts/icons.py", "icons.py")
 
         return self
 
