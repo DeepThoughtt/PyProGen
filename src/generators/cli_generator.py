@@ -88,3 +88,14 @@ class CliGenerator(ProjectGenerator):
         self.path_manager.copy_python_template("shared/singletons/settings.py", "settings.py")
 
         return self
+
+    def generate_installer(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".windows")
+
+        installer = Files.load_template("cli/misc/installer.iss")
+        installer_template = string.Template(installer.read_text(encoding = "utf-8"))
+        formatted_installer = installer_template.substitute(app_name = self.app_name, publisher = self.publisher)
+        self.path_manager.create_file_from_content(formatted_installer, "installer.iss")
+
+        return self
