@@ -9,7 +9,7 @@ import sys
 sys.path.insert(0, project_root)
 
 datas = []
-datas += collect_data_files("assets")
+datas += collect_data_files("assets", include_py_files = True)
 datas += collect_data_files("l10n")
 
 a = Analysis(
