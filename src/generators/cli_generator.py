@@ -72,8 +72,8 @@ class CliGenerator(ProjectGenerator):
         self.path_manager.cd("configs")
 
         settings = Files.read_default_settings()
-        settings["version"] = "0.1.0"
         settings["appName"] = self.app_name
+        settings["version"] = "0.1.0"
 
         # We don't add the "language" setting and the "createCrashReports" setting
         # because the language is detected from the locale and cannot be changed
