@@ -14,7 +14,6 @@ LanguageDetectionMethod=locale
 OutputDir=output
 OutputBaseFilename=PyProGen-Windows-Installer
 SetupIconFile=..\assets\icons\pyprogen.ico
-LicenseFile=..\LICENSE
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
