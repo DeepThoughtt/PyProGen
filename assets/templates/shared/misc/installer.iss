@@ -13,7 +13,6 @@ DefaultGroupName={#AppName}
 OutputDir=output
 OutputBaseFilename=$app_name-Windows-Installer
 SetupIconFile=..\assets\icons\icon.ico
-LicenseFile=..\LICENSE
 UninstallDisplayIcon={app}\$app_name.exe
 Compression=lzma
 SolidCompression=yes

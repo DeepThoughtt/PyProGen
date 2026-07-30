@@ -14,7 +14,6 @@ LanguageDetectionMethod=locale
 OutputDir=output
 OutputBaseFilename=$app_name-Windows-Installer
 SetupIconFile=..\assets\icons\icon.ico
-LicenseFile=..\LICENSE
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
