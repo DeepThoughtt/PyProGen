@@ -108,3 +108,15 @@ class PygameGenerator(ProjectGenerator):
         self.path_manager.copy_python_template("shared/utils/settings_checker.py", "settings_checker.py")
 
         return self
+
+    def generate_github_build_workflow(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".github")
+        self.path_manager.cd("workflows")
+
+        build_workflow = Files.load_template("pygame/misc/build.yaml")
+        build_workflow_template = string.Template(build_workflow.read_text(encoding = "utf-8"))
+        formatted_build_workflow = build_workflow_template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted_build_workflow, "build.yaml")
+
+        return self
