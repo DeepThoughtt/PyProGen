@@ -6,7 +6,7 @@ AppName={#AppName}
 AppVersion=0.1.0
 AppVerName={#AppName}
 AppPublisher={#Publisher}
-DefaultDirName={pf}\{#AppName}
+DefaultDirName={commonpf}\{#AppName}
 UninstallDisplayIcon={app}\$app_name.exe
 DefaultGroupName={#AppName}
 LanguageDetectionMethod=locale
@@ -16,7 +16,7 @@ OutputBaseFilename=$app_name-Windows-Installer
 SetupIconFile=..\assets\icons\icon.ico
 Compression=lzma
 SolidCompression=yes
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=x64compatible
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

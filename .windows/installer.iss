@@ -6,7 +6,7 @@ AppName={#AppName}
 AppVersion=0.3.0
 AppVerName={#AppName}
 AppPublisher={#Publisher}
-DefaultDirName={pf}\{#AppName}
+DefaultDirName={commonpf}\{#AppName}
 UninstallDisplayIcon={app}\ppg.exe
 DefaultGroupName={#AppName}
 LanguageDetectionMethod=locale
@@ -17,7 +17,7 @@ SetupIconFile=..\assets\icons\pyprogen.ico
 LicenseFile=..\LICENSE
 Compression=lzma
 SolidCompression=yes
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=x64compatible
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

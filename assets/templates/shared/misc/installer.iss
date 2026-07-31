@@ -7,7 +7,7 @@ AppName={#AppName}
 AppVersion=0.1.0
 AppVerName={#AppName}
 AppPublisher={#Publisher}
-DefaultDirName={pf}\{#AppName}
+DefaultDirName={commonpf}\{#AppName}
 DefaultGroupName={#AppName}
 
 OutputDir=output
@@ -16,7 +16,7 @@ SetupIconFile=..\assets\icons\icon.ico
 UninstallDisplayIcon={app}\$app_name.exe
 Compression=lzma
 SolidCompression=yes
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=x64compatible
 LanguageDetectionMethod=locale
 
 [Languages]
