@@ -42,3 +42,13 @@ exe = EXE(
     console=True,
     icon="../assets/icons/pyprogen.ico",
 )
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    strip=False,
+    upx=True,
+    name='PyProGen'
+)

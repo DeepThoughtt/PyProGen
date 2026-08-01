@@ -3,7 +3,7 @@
 
 [Setup]
 AppName={#AppName}
-AppVersion=0.3.1
+AppVersion=0.3.2
 AppVerName={#AppName}
 AppPublisher={#Publisher}
 DefaultDirName={commonpf}\{#AppName}
@@ -24,7 +24,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 
 [Files]
-Source: "..\dist\ppg.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\dist\PyProGen\*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
 Name: "{group}\PyProGen"; Filename: "{app}\ppg.exe"
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{app}"
