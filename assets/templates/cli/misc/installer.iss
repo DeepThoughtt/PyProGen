@@ -23,7 +23,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 
 [Files]
-Source: "..\dist\$app_name.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\dist\$app_name\*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
 Name: "{group}\$app_name"; Filename: "{app}\$app_name.exe"
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{app}"
