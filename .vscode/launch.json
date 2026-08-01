@@ -36,6 +36,15 @@
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"args": ["--help"]
+		},
+		{
+			"name": "Version",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "src.main",
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"args": ["--version"]
 		}
 	]
 }
