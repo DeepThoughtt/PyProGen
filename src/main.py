@@ -1,4 +1,5 @@
 from src.business.app_business import AppBusiness
+from src.consts.project_types import ProjectTypes
 from src.utils.custom_parser import CustomParser
 from src.singletons.localization import localization
 
@@ -17,7 +18,7 @@ def main():
 
     group.add_argument(
         "--type",
-        help = localization["projectType"],
+        help = localization["projectType"].format(project_types = ", ".join(ProjectTypes.to_list())),
     )
 
     group.add_argument(

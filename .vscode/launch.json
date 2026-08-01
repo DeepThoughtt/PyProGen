@@ -27,6 +27,15 @@
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"args": ["--dir", ".", "--type", "pygame", "--name", "TestPygameApp", "--publisher", "DeepThoughtt", "--verbose"]
+		},
+		{
+			"name": "Help",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "src.main",
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"args": ["--help"]
 		}
 	]
 }

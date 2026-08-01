@@ -1,7 +1,7 @@
 {
 	"pyProGenDescription": "PyProGen: uno strumento per generare un setup per vari tipi di progetti Python.",
 	"workingDirectory": "Directory di lavoro",
-	"projectType": "Tipo di progetto",
+	"projectType": "Tipo di progetto ({project_types})",
 	"projectName": "Nome del progetto",
 	"generateFromJson": "Genera il progetto usando un file JSON",
 	"generateJson": "Genera un file JSON template da modificare",
