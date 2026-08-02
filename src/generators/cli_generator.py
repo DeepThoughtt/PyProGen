@@ -88,3 +88,14 @@ class CliGenerator(ProjectGenerator):
         self.path_manager.create_file_from_content(formatted_installer, "installer.iss")
 
         return self
+
+    def generate_spec_file(self):
+        self.path_manager.reset()
+        self.path_manager.cd(".windows")
+
+        spec = Files.load_template("cli/misc/main-windows.spec")
+        spec_template = string.Template(spec.read_text(encoding = "utf-8"))
+        formatted_spec = spec_template.substitute(app_name = self.app_name)
+        self.path_manager.create_file_from_content(formatted_spec, "main-windows.spec")
+
+        return self
