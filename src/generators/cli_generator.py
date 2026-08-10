@@ -74,7 +74,7 @@ class CliGenerator(ProjectGenerator):
         self.path_manager.reset()
         self.path_manager.cd("src", True)
         self.path_manager.cd("singletons", True)
-        self.path_manager.copy_python_template("shared/singletons/settings.py", "settings.py")
+        self.path_manager.copy_python_template("cli/singletons/settings.py", "settings.py")
 
         return self
 
