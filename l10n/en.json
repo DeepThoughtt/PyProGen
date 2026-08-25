@@ -22,5 +22,6 @@
     "useWorkdirDescription": "Does not create a directory for the project, uses the work directory instead",
     "generationCompleted": "Generation completed",
     "generatingFile": "Generating {file}",
-    "unspecifiedPublisherError": "Error: unspecified publisher"
+    "unspecifiedPublisherError": "Error: unspecified publisher",
+    "ambiguousOptionError": "Ambiguous option: {used} could match {possibilities}"
 }

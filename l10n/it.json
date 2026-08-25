@@ -22,5 +22,6 @@
 	"useWorkdirDescription": "Usa la directory di lavoro come directory del progetto invece di crearne una apposita",
 	"generationCompleted": "Generazione completata",
 	"generatingFile": "Genero {file}",
-	"unspecifiedPublisherError": "Errore: publisher non specificato"
+	"unspecifiedPublisherError": "Errore: publisher non specificato",
+	"ambiguousOptionError": "Opzione ambigua: {used} potrebbe corrispondere a {possibilities}"
 }

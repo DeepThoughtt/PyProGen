@@ -16,6 +16,13 @@ class CustomParser(argparse.ArgumentParser):
             unrecognized_arguments_msg = localization["unrecognizedArgumentsError"].format(cmd = message.split(":")[1].strip())
             usage_msg = self.format_usage().replace("usage:", localization["usageHelpText"])
             print(f"{usage_msg}{unrecognized_arguments_msg}")
+
+        elif "ambiguous option" in message:
+            params = message.split(":")[1].split(" could match ")
+            used = params[0].strip()
+            possibilities = params[1].strip()
+            ambiguous_option_msg = localization["ambiguousOptionError"].format(used = used, possibilities = possibilities)
+            print(ambiguous_option_msg)
         
         else:
             print(message)
