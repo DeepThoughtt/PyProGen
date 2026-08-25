@@ -63,38 +63,22 @@ class AppBusiness:
 
     @staticmethod
     def generate_project(args):
-        generator = None
+        generator_type = {
+            ProjectTypes.CLI: CliGenerator,
+            ProjectTypes.TKINTER: TkinterGenerator,
+            ProjectTypes.PYGAME: PygameGenerator,
+        }.get(args.type)
 
-        match args.type:
-            case ProjectTypes.CLI:
-                generator = CliGenerator(
-                    app_name = args.name,
-                    publisher = args.publisher,
-                    work_directory = args.dir,
-                    use_workdir = args.use_workdir,
-                    verbose_mode_enabled = args.verbose,
-                )
+        if generator_type == None:
+            raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
 
-            case ProjectTypes.TKINTER:
-                generator = TkinterGenerator(
-                    app_name = args.name,
-                    publisher = args.publisher,
-                    work_directory = args.dir,
-                    use_workdir = args.use_workdir,
-                    verbose_mode_enabled = args.verbose,
-                )
-
-            case ProjectTypes.PYGAME:
-                generator = PygameGenerator(
-                    app_name = args.name,
-                    publisher = args.publisher,
-                    work_directory = args.dir,
-                    use_workdir = args.use_workdir,
-                    verbose_mode_enabled = args.verbose,
-                )
-
-            case _:
-                raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
+        generator = generator_type(
+            app_name = args.name,
+            publisher = args.publisher,
+            work_directory = args.dir,
+            use_workdir = args.use_workdir,
+            verbose_mode_enabled = args.verbose,
+        )
             
         generator.generate()
         print(localization["generationCompleted"])

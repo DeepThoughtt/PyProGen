@@ -10,6 +10,7 @@ def main():
     )
     
     parser.add_argument(
+        "-d",
         "--dir",
         help = localization["workingDirectory"],
     )
@@ -17,33 +18,39 @@ def main():
     group = parser.add_mutually_exclusive_group()
 
     group.add_argument(
+        "-t",
         "--type",
         help = localization["projectType"].format(project_types = ", ".join(ProjectTypes.to_list())),
     )
 
     group.add_argument(
+        "-ver",
         "--version",
         action = "store_true",
         help = localization["showVersion"],
     )
 
     parser.add_argument(
+        "-n",
         "--name",
         help = localization["projectName"],
     )
 
     parser.add_argument(
+        "-p",
         "--publisher",
         help = localization["projectPublisher"],
     )
 
     parser.add_argument(
+        "-u",
         "--use-workdir",
         action = "store_true",
         help = localization["useWorkdirDescription"],
     )
 
     parser.add_argument(
+        "-v",
         "--verbose",
         action = "store_true",
         help = localization["enableVerboseOutput"],
