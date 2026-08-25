@@ -79,6 +79,6 @@ class AppBusiness:
             use_workdir = args.use_workdir,
             verbose_mode_enabled = args.verbose,
         )
-            
+        
         generator.generate()
         print(localization["generationCompleted"])
