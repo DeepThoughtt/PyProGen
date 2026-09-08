@@ -25,9 +25,7 @@ class PathManager:
 
         # If a Python module has just been created we have to add the __init__.py file to it
         if is_python_module and just_created:
-            init_path = self.actual_directory / "__init__.py"
-            self.print_file_info_if_verbose(init_path)
-            open(init_path, "a").close()
+            self.touch("__init__.py")
 
     def reset(self):
         self.actual_directory = self.work_directory
@@ -59,3 +57,8 @@ class PathManager:
         destination = self.actual_directory / filename
         self.print_file_info_if_verbose(destination)
         shutil.copyfile(source, destination)
+
+    def touch(self, filename):
+        touch_path = self.actual_directory / filename
+        self.print_file_info_if_verbose(touch_path)
+        open(touch_path, "a").close()
