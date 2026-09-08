@@ -68,8 +68,8 @@ class ProjectGenerator:
         self.path_manager.copy_file(icon, "icon.ico")
 
         self.path_manager.reset()
-        self.path_manager.cd("src")
-        self.path_manager.cd("consts")
+        self.path_manager.cd("src", True)
+        self.path_manager.cd("consts", True)
         self.path_manager.copy_python_template("shared/consts/icons.py", "icons.py")
         
         return self
