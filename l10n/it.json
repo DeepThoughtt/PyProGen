@@ -9,7 +9,7 @@
 	"enableVerboseOutput": "Attiva l'output verboso durante la generazione del progetto",
 	"tooManyArgumentsError": "Errore: troppi parametri",
 	"unspecifiedProjectdirectoryError": "Errore: directory del progetto non specificata",
-	"notADirectoryError": "Errore: '{dir}' non è una directory",
+	"notADirectoryError": "Errore: '{dir}' non \u00E8 una directory",
 	"directoryDoesNotExistError": "Errore: la directory '{dir}' non esiste",
 	"unspecifiedOrInvalidProjectTypeError": "Errore: tipo di progetto non valido o non specificato",
 	"usage": "Uso: {formatted}",
