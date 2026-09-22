@@ -29,7 +29,7 @@ class AppBusiness:
 
     @staticmethod
     def generate_project(args):
-        generator_type = AppBusiness.get_project_type(args)
+        generator_type = AppBusiness.get_generator_type(args)
 
         if generator_type == None:
             raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
@@ -46,7 +46,7 @@ class AppBusiness:
         print(localization["generationCompleted"])
 
     @staticmethod
-    def get_project_type(args):
+    def get_generator_type(args):
         return {
             ProjectTypes.CLI: CliGenerator,
             ProjectTypes.TKINTER: TkinterGenerator,
