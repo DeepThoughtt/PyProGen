@@ -15,7 +15,7 @@
 	"usage": "Uso: {formatted}",
 	"unrecognizedArgumentsError": "Errore: parametri non riconosciuti ({cmd})",
 	"unspecifiedProjectNameError": "Errore: nome del progetto non specificato",
-	"showsHelpMessage": "Mostra il messaggio di aiuto ed esce dall'applicazione",
+	"showHelpMessage": "Mostra il messaggio di aiuto ed esce dall'applicazione",
 	"usageHelpText": "Uso:",
 	"optionsHelpText": "Opzioni:",
 	"projectPublisher": "Publisher del progetto",
@@ -23,5 +23,6 @@
 	"generationCompleted": "Generazione completata",
 	"generatingFile": "Genero {file}",
 	"unspecifiedPublisherError": "Errore: publisher non specificato",
-	"ambiguousOptionError": "Opzione ambigua: {used} potrebbe corrispondere a {possibilities}"
+	"ambiguousOptionError": "Opzione ambigua: {used} potrebbe corrispondere a {possibilities}",
+	"argumentNotAllowedWithError": "Errore: l'argomento {first_argument} non pu\u00F2 essere usato insieme all'argomento {second_argument}"
 }

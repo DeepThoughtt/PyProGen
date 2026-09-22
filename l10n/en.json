@@ -15,7 +15,7 @@
     "usage": "Usage: {formatted}",
     "unrecognizedArgumentsError": "Error: unrecognized arguments ({cmd})",
     "unspecifiedProjectNameError": "Error: unspecified project name",
-    "showsHelpMessage": "Shows the help message and quits the application",
+    "showHelpMessage": "Shows the help message and quits the application",
     "usageHelpText": "Usage:",
     "optionsHelpText": "Options:",
     "projectPublisher": "Project publisher",
@@ -23,5 +23,6 @@
     "generationCompleted": "Generation completed",
     "generatingFile": "Generating {file}",
     "unspecifiedPublisherError": "Error: unspecified publisher",
-    "ambiguousOptionError": "Ambiguous option: {used} could match {possibilities}"
+    "ambiguousOptionError": "Ambiguous option: {used} could match {possibilities}",
+    "argumentNotAllowedWithError": "Error: argument {first_argument} not allowed with argument {second_argument}"
 }

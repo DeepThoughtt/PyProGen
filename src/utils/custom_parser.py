@@ -30,7 +30,17 @@ class CustomParser(argparse.ArgumentParser):
                 print(ambiguous_option_msg)
 
             case _:
-                print(message)
+
+                # This is a special case, the syntax of the error message is different than usual
+                # Example: argument -t/--type: not allowed with argument -ver/--version
+                if "not allowed with argument" in error_description:
+                    first_argument = error_type.split()[1]
+                    second_argument = error_description.split()[-1]
+                    not_allowed_with_arg_msg = localization["argumentNotAllowedWithError"].format(first_argument = first_argument, second_argument = second_argument)
+                    print(not_allowed_with_arg_msg)
+
+                else:
+                    print(message)
 
         sys.exit(2)
 
@@ -38,6 +48,6 @@ class CustomParser(argparse.ArgumentParser):
         help_text = super().format_help()\
             .replace("usage:", localization["usageHelpText"])\
             .replace("options:", localization["optionsHelpText"])\
-            .replace("show this help message and exit", localization["showsHelpMessage"])
+            .replace("show this help message and exit", localization["showHelpMessage"])
         
         print(help_text)
