@@ -15,11 +15,11 @@ class CliGenerator(ProjectGenerator):
     ):
         
         super().__init__(
-            app_name,
-            publisher,
-            work_directory,
-            use_workdir,
-            verbose_mode_enabled,
+            app_name = app_name,
+            publisher = publisher,
+            work_directory = work_directory,
+            use_workdir = use_workdir,
+            verbose_mode_enabled = verbose_mode_enabled,
         )
 
     def generate(self):

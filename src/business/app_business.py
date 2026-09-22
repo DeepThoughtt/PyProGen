@@ -1,5 +1,3 @@
-import pathlib
-
 from src.consts.project_types import ProjectTypes
 from src.generators.cli_generator import CliGenerator
 from src.generators.pygame_generator import PygameGenerator
