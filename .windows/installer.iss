@@ -3,7 +3,7 @@
 
 [Setup]
 AppName={#AppName}
-AppVersion=1.0.4
+AppVersion=1.0.5
 AppVerName={#AppName}
 AppPublisher={#Publisher}
 DefaultDirName={commonpf}\{#AppName}
