@@ -1,5 +1,5 @@
 {
-	"pyProGenDescription": "PyProGen: uno strumento per generare un setup per vari tipi di progetti Python.",
+	"pyProGenDescription": "PyProGen: uno strumento per generare setup per vari tipi di progetti Python.",
 	"workingDirectory": "Directory di lavoro",
 	"projectType": "Tipo di progetto ({project_types})",
 	"projectName": "Nome del progetto",
