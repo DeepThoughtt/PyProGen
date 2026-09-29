@@ -8,7 +8,7 @@ class Validator:
     @staticmethod
     def validate_arguments(args):
         if args.version:
-            if args.dir != None or args.type != None or args.name != None or args.verbose or args.publisher != None or args.use_workdir != None:
+            if args.dir != None or args.type != None or args.name != None or args.verbose or args.publisher != None or args.use_workdir:
                 return localization["tooManyArgumentsError"]
             
             # No need to check further, we print the program version
