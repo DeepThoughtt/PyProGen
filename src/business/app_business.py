@@ -31,7 +31,7 @@ class AppBusiness:
     def generate_project(args):
         generator_type = AppBusiness.get_generator_type(args)
 
-        if generator_type == None:
+        if generator_type is None:
             raise ValueError(localization["unspecifiedOrInvalidProjectTypeError"])
 
         generator = generator_type(

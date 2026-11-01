@@ -12,7 +12,7 @@ class Localization:
     def set_language_from_locale(self):
         system_locale = locale.getlocale()
 
-        if system_locale == None or len(system_locale[0]) < 2:
+        if system_locale is None or len(system_locale[0]) < 2:
             self.set_language(Languages.ENGLISH)
             return
         

@@ -15,7 +15,7 @@ class Validator:
             return
         
         # Now we can handle the generation parameters alone
-        if args.dir == None:
+        if args.dir is None:
             return localization["unspecifiedProjectdirectoryError"]
 
         project_directory = pathlib.Path(args.dir)
@@ -26,11 +26,11 @@ class Validator:
         if not project_directory.is_dir():
             return localization["notADirectoryError"].format(dir = args.dir)
         
-        if args.type == None or not ProjectTypes.is_valid(args.type):
+        if args.type is None or not ProjectTypes.is_valid(args.type):
             return localization["unspecifiedOrInvalidProjectTypeError"]
         
-        if args.name == None:
+        if args.name is None:
             return localization["unspecifiedProjectNameError"]
         
-        if args.publisher == None:
+        if args.publisher is None:
             return localization["unspecifiedPublisherError"]

@@ -67,7 +67,7 @@ class Files:
             default_settings = Files.read_default_settings()
             system_locale = locale.getlocale()
 
-            if system_locale == None or len(system_locale[0]) < 2:
+            if system_locale is None or len(system_locale[0]) < 2:
                 default_settings["language"] = Languages.ENGLISH
             
             else:
